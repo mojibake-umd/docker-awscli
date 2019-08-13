@@ -1,6 +1,6 @@
-FROM alpine
+FROM alpine:latest
 
 RUN \
-	mkdir -p /aws && \
-	apk -Uuv add aws-cli openssh bash && \
-	rm /var/cache/apk/*
+        apk update --no-cache && \
+	apk -Uuv add openssh bash && \
+	apk -Uuv add aws-cli --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing
